@@ -47,7 +47,7 @@ jobs:
       train_data: ${{parent.jobs.prep_data.outputs.train_data}}
       test_data: ${{parent.jobs.prep_data.outputs.test_data}}
     outputs:
-      model_output:
+      model_output: ${{parent.outputs.model_output}}
         type: mlflow_model
     sampling_algorithm: random  # Specify the sampling algorithm
     trial: ./train.yml  # Refers to a separate command component
