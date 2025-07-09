@@ -25,8 +25,8 @@ def parse_args():
 
     return args
     
-if not args.model_output:
-    raise ValueError("model_output is missing. Make sure it's passed correctly from the sweep step.")
+    if not args.model_output:
+        raise ValueError("model_output is missing. Make sure it's passed correctly from the sweep step.")
     
 def main(args):
     '''Loads the best-trained model from the sweep job and registers it'''
