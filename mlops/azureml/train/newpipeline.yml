@@ -1,4 +1,4 @@
-$schema: https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json
+t$schema: https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json
 type: pipeline
 display_name: decision_tree_training_pipeline  # Provide the display name for the pipeline
 experiment_name: cars_training # Provide the experiment name
@@ -50,7 +50,7 @@ jobs:
       model_output:
         type: mlflow_model
     sampling_algorithm: random  # Specify the sampling algorithm
-    trial: ./train.yml  # Refers to a separate command component
+    component: ./train.yml  # Refers to a separate command component
     search_space:
       n_estimators:
         type: choice
