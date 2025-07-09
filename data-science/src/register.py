@@ -18,10 +18,13 @@ def parse_args():
     parser.add_argument('--model_output', type=str, help='Model directory')  # Hint: Specify the type for model_path (str)
     parser.add_argument("--model_info_output_path", type=str, help="Path to write model info JSON")  # Hint: Specify the type for model_info_output_path (str)
     args, _ = parser.parse_known_args()
+    
     print(f'Arguments: {args}')
-    print(f"Does model_output exist? {os.path.exists(args.model_output)}")
-    print(f"List dir at model_output: {os.listdir(args.model_output) if os.path.exists(args.model_output) else 'N/A'}")
-
+    # Prevent crashing if model_output is None
+    if args.model_output is None:
+        print("⚠️ Warning: model_output is None!")
+    else:
+        print(f"Does model_output exist? {os.path.exists(args.model_output)}")
 
     return args
     
