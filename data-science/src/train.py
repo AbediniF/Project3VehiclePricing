@@ -20,8 +20,8 @@ def parse_args():
     # -------- WRITE YOUR CODE HERE --------
     
     # Step 1: Define arguments for train data, test data, model output, and RandomForest hyperparameters. Specify their types and defaults.  
-    parser.add_arguement("--train_data", type=str, help="Path to train dataset")
-    parser.add_arguement("--test_data", type=str, help="Path to test dataset")
+    parser.add_arguement("--train_dataset", type=str, help="Path to train dataset")
+    parser.add_arguement("--test_dataset", type=str, help="Path to test dataset")
     parser.add_arguement("--n_estimators", type=int, default=100, help="The number of trees in the forest")
     parser.add_arguement("--max_depth", type=int, default=None, help="Maximum depth of the tree")
     parser.add_arguement("--model_output", type=str, help="Path to save the trained model")
@@ -66,8 +66,8 @@ if __name__ == "__main__":
     args = parse_args()
 
     lines = [
-        f"Train dataset input path: {args.train_data}",
-        f"Test dataset input path: {args.test_data}",
+        f"Train dataset input path: {args.train_dataset}",
+        f"Test dataset input path: {args.test_dataset}",
         f"Model output path: {args.model_output}",
         f"Number of Estimators: {args.n_estimators}",
         f"Max Depth: {args.max_depth}"
