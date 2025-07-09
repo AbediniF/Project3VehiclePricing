@@ -15,7 +15,7 @@ def parse_args():
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--model_name', type=str, help='Name under which model will be registered')  # Hint: Specify the type for model_name (str)
-    parser.add_argument('--model_path', type=str, help='Model directory')  # Hint: Specify the type for model_path (str)
+    parser.add_argument('--model_ouput', type=str, help='Model directory')  # Hint: Specify the type for model_path (str)
     parser.add_argument("--model_info_output_path", type=str, help="Path to write model info JSON")  # Hint: Specify the type for model_info_output_path (str)
     args, _ = parser.parse_known_args()
     print(f'Arguments: {args}')
@@ -63,7 +63,7 @@ if __name__ == "__main__":
     
     lines = [
         f"Model name: {args.model_name}",
-        f"Model path: {args.model_path}",
+        f"Model path: {args.model_output}",
         f"Model info output path: {args.model_info_output_path}"
     ]
 
