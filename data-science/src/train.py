@@ -15,16 +15,16 @@ import mlflow.sklearn
 def parse_args():
     '''Parse input arguments'''
 
-    parser = argparse.ArgumentParser("train")
+    parser = argparse.ArgumentParser("Train")
     
     # -------- WRITE YOUR CODE HERE --------
     
     # Step 1: Define arguments for train data, test data, model output, and RandomForest hyperparameters. Specify their types and defaults.  
-    parser.add_arguement("--train_dataset", type=str, help="Path to train dataset")
-    parser.add_arguement("--test_dataset", type=str, help="Path to test dataset")
-    parser.add_arguement("--n_estimators", type=int, default=100, help="The number of trees in the forest")
-    parser.add_arguement("--max_depth", type=int, default=None, help="Maximum depth of the tree")
-    parser.add_arguement("--model_output", type=str, help="Path to save the trained model")
+    parser.add_argument("--train_dataset", type=str, help="Path to train dataset")
+    parser.add_argument("--test_dataset", type=str, help="Path to test dataset")
+    parser.add_argument("--n_estimators", type=int, default=100, help="The number of trees in the forest")
+    parser.add_argument("--max_depth", type=int, default=None, help="Maximum depth of the tree")
+    parser.add_argument("--model_output", type=str, help="Path to save the trained model")
     
     args = parser.parse_args()
 
