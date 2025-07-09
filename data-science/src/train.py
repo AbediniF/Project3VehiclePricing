@@ -12,6 +12,11 @@ from sklearn.metrics import mean_squared_error
 import mlflow
 import mlflow.sklearn
 
+def select_first_file(path):
+
+    files = os.listdir(path)
+    return os.path.join(path,files[0])
+
 def parse_args():
     '''Parse input arguments'''
 
@@ -37,8 +42,8 @@ def main(args):
 
     # Step 2: Read the train and test datasets from the provided paths using pandas. Replace '_______' with appropriate file paths and methods. 
     # load datasets
-    train_df = pd.read_csv(args.train_dataset)
-    test_df = pd.read_csv(args.test_dataset)
+    train_df = pd.read_csv(select_first_file(args.train_dataset))
+    test_df = pd.read_csv(select_first_file(args.test_dataset))
     # Step 3: Split the data into features (X) and target (y) for both train and test datasets. Specify the target column name.  
     y_train = train_df['price'] # specify the target column
     X_train = train_df.drop(columns=['price']) # drop the price column 
