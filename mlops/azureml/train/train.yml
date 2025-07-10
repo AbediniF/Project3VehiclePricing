@@ -3,9 +3,9 @@ type: command  # This is correct for trial definitions
 name: train_model
 display_name: train_model
 inputs: 
-  train_data:
+  train_dataset:
     type: uri_folder  # Specify the type for train_data
-  test_data:
+  test_dataset:
     type: uri_folder  # Specify the type for test_data
   n_estimators:
     type: integer  
