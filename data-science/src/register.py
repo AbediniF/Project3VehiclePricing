@@ -51,7 +51,7 @@ def main(args):
     )
     # Step 3: Register the logged model using its URI and model name, and retrieve its registered version. 
     run_id = mlflow.active_run().info.run_id
-    model_uri = f'runs:/{run_id}/{args.model_name}'
+    model_uri = f"runs:/{run_id}/random_forest_price_regressor"
     mlflow_model = mlflow.register_model(model_uri, args.model_name)
     model_version = mlflow_model.version
 
