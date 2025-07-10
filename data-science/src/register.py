@@ -21,14 +21,14 @@ def parse_args():
     
     print(f'Arguments: {args}')
     # Prevent crashing if model_output is None
-    if args.model_output is None:
+    if args.model_path is None:
         print("⚠️ Warning: model_output is None!")
     else:
-        print(f"Does model_output exist? {os.path.exists(args.model_path)}")
+        print(f"Does model_path exist? {os.path.exists(args.model_path)}")
 
     return args
     
-    if not args.model_output:
+    if not args.model_path:
         raise ValueError("model_output is missing. Make sure it's passed correctly from the sweep step.")
     
 def main(args):
