@@ -57,6 +57,7 @@ def main(args):
 
      # Step 4: Write model registration details, including model name and version, into a JSON file in the specified output path. 
     print("Writing JSON")
+    #os.makedirs(args.model_info_output_path, exist_ok=True)
     model_info = {"id": f"{args.model_name}:{model_version}"}
     output_path = os.path.join(args.model_info_output_path, "model_info.json")
     with open(output_path, "w") as of:
