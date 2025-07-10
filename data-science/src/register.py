@@ -22,14 +22,15 @@ def parse_args():
     print(f'Arguments: {args}')
     # Prevent crashing if model_output is None
     if args.model_path is None:
-        print("⚠️ Warning: model_output is None!")
+        print("⚠️ Warning: model_path is None!")
     else:
         print(f"Does model_path exist? {os.path.exists(args.model_path)}")
+    if not args.model_path:
+        raise ValueError("model_path is missing. Make sure it's passed correctly from the sweep step.")
 
     return args
     
-    if not args.model_path:
-        raise ValueError("model_output is missing. Make sure it's passed correctly from the sweep step.")
+
     
 def main(args):
     '''Loads the best-trained model from the sweep job and registers it'''
