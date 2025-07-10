@@ -15,7 +15,7 @@ def parse_args():
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--model_name', type=str, help='Name under which model will be registered')  # Hint: Specify the type for model_name (str)
-    parser.add_argument('--model_output', type=str, help='Model directory')  # Hint: Specify the type for model_path (str)
+    parser.add_argument('--model_path', type=str, help='Model directory')  # Hint: Specify the type for model_path (str)
     parser.add_argument("--model_info_output_path", type=str, help="Path to write model info JSON")  # Hint: Specify the type for model_info_output_path (str)
     args, _ = parser.parse_known_args()
     
@@ -24,7 +24,7 @@ def parse_args():
     if args.model_output is None:
         print("⚠️ Warning: model_output is None!")
     else:
-        print(f"Does model_output exist? {os.path.exists(args.model_output)}")
+        print(f"Does model_output exist? {os.path.exists(args.model_path)}")
 
     return args
     
@@ -40,7 +40,7 @@ def main(args):
     # -----------  WRITE YOR CODE HERE -----------
     
     # Step 1: Load the model from the specified path using `mlflow.sklearn.load_model` for further processing.  
-    model_output = mlflow.sklearn.load_model(Path(args.model_output))
+    model_output = mlflow.sklearn.load_model(Path(args.model_path))
     
     # Step 2: Log the loaded model in MLflow with the specified model name for versioning and tracking.  
     mlflow.sklearn.log_model(
@@ -72,7 +72,7 @@ if __name__ == "__main__":
     
     lines = [
         f"Model name: {args.model_name}",
-        f"Model path: {args.model_output}",
+        f"Model path: {args.model_path}",
         f"Model info output path: {args.model_info_output_path}"
     ]
 
